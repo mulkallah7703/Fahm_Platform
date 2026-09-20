@@ -20,7 +20,8 @@ export function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-24 py-16 sm:py-20 lg:py-24 ${tones[tone]} ${className}`}
+      tabIndex={-1}
+      className={`scroll-mt-24 py-16 sm:py-20 lg:py-24 outline-none ${tones[tone]} ${className}`}
     >
       <div className="section-shell reveal">{children}</div>
     </section>

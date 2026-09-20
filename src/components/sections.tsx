@@ -9,7 +9,8 @@ export function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden surface-grid pattern-fade"
+      tabIndex={-1}
+      className="relative overflow-hidden surface-grid pattern-fade outline-none"
     >
       <div className="section-shell relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
         <div className="reveal">

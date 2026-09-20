@@ -4,8 +4,9 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
-  useSyncExternalStore,
+  useState,
   type ReactNode,
 } from "react";
 import { content, type Copy, type Locale } from "@/lib/content";
@@ -17,80 +18,41 @@ type LanguageContextValue = {
   dir: "rtl" | "ltr";
   t: Copy;
   setLocale: (locale: Locale) => void;
-  toggleLocale: () => void;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
-
-function applyDocumentLocale(locale: Locale) {
-  const dir = locale === "ar" ? "rtl" : "ltr";
-  document.documentElement.lang = locale;
-  document.documentElement.dir = dir;
-  document.documentElement.style.colorScheme = "light";
-  document.title = content[locale].meta.title;
-}
 
 function isLocale(value: string | null): value is Locale {
   return value === "ar" || value === "en";
 }
 
-function readStoredLocale(): Locale {
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  return isLocale(stored) ? stored : "ar";
-}
-
-let currentLocale: Locale = "ar";
-let didHydrate = false;
-const listeners = new Set<() => void>();
-
-function emit() {
-  listeners.forEach((listener) => listener());
-}
-
-function subscribe(listener: () => void) {
-  listeners.add(listener);
-
-  if (!didHydrate) {
-    didHydrate = true;
-    const stored = readStoredLocale();
-    if (stored !== currentLocale) {
-      currentLocale = stored;
-      applyDocumentLocale(stored);
-      queueMicrotask(emit);
-    } else {
-      applyDocumentLocale(stored);
-    }
-  }
-
-  return () => {
-    listeners.delete(listener);
-  };
-}
-
-function getSnapshot() {
-  return currentLocale;
-}
-
-function getServerSnapshot() {
-  return "ar" as const;
-}
-
-function writeLocale(next: Locale) {
-  currentLocale = next;
-  window.localStorage.setItem(STORAGE_KEY, next);
-  applyDocumentLocale(next);
-  emit();
+function applyDocumentLocale(locale: Locale) {
+  const dir = locale === "ar" ? "rtl" : "ltr";
+  document.documentElement.lang = locale;
+  document.documentElement.dir = dir;
+  document.title = content[locale].meta.title;
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const locale = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const [locale, setLocaleState] = useState<Locale>("ar");
+  const [ready, setReady] = useState(false);
 
-  const setLocale = useCallback((next: Locale) => {
-    writeLocale(next);
+  useEffect(() => {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    // Hydrate the stored language after mount so SSR/CSR Arabic markup matches.
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage is client-only
+    if (isLocale(stored)) setLocaleState(stored);
+    setReady(true);
   }, []);
 
-  const toggleLocale = useCallback(() => {
-    writeLocale(currentLocale === "ar" ? "en" : "ar");
+  useEffect(() => {
+    if (!ready) return;
+    applyDocumentLocale(locale);
+    window.localStorage.setItem(STORAGE_KEY, locale);
+  }, [locale, ready]);
+
+  const setLocale = useCallback((next: Locale) => {
+    setLocaleState(next);
   }, []);
 
   const value = useMemo<LanguageContextValue>(
@@ -99,9 +61,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       dir: locale === "ar" ? "rtl" : "ltr",
       t: content[locale],
       setLocale,
-      toggleLocale,
     }),
-    [locale, setLocale, toggleLocale],
+    [locale, setLocale],
   );
 
   return (

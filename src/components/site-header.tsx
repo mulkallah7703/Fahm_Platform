@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { BrandLockup } from "@/components/logo";
 import { useLanguage } from "@/components/language-provider";
 
 export function SiteHeader() {
-  const { t, locale, toggleLocale } = useLanguage();
+  const { t, locale, setLocale } = useLanguage();
   const [open, setOpen] = useState(false);
+  const menuId = useId();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -33,8 +34,8 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/80 bg-cream/85 backdrop-blur-md">
-      <div className="section-shell flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
+    <header className="sticky top-0 z-50 border-b border-line/80 bg-cream/90 backdrop-blur-md">
+      <div className="section-shell flex h-16 items-center justify-between gap-3 sm:h-[4.5rem]">
         <a href="#top" className="rounded-xl" onClick={() => setOpen(false)}>
           <BrandLockup
             compact
@@ -59,48 +60,61 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={toggleLocale}
-            className="rounded-full border border-line bg-paper px-3 py-1.5 text-sm font-semibold text-olive transition-colors hover:border-olive-mid hover:bg-olive-soft"
+          <div
+            className="inline-flex rounded-full border border-line bg-paper p-0.5"
+            role="group"
             aria-label={t.lang.switchAria}
           >
-            <span className="sr-only">{t.lang.switchAria}</span>
-            <span aria-hidden="true">
-              {locale === "ar" ? "EN" : "ع"}
-              <span className="mx-1 text-muted">·</span>
-              {t.lang.switchTo}
-            </span>
-          </button>
+            <button
+              type="button"
+              onClick={() => setLocale("ar")}
+              aria-pressed={locale === "ar"}
+              className={`rounded-full px-2.5 py-1 text-sm font-semibold transition-colors ${
+                locale === "ar"
+                  ? "bg-olive text-cream"
+                  : "text-olive hover:bg-olive-soft"
+              }`}
+            >
+              عربي
+            </button>
+            <button
+              type="button"
+              onClick={() => setLocale("en")}
+              aria-pressed={locale === "en"}
+              className={`rounded-full px-2.5 py-1 text-sm font-semibold transition-colors ${
+                locale === "en"
+                  ? "bg-olive text-cream"
+                  : "text-olive hover:bg-olive-soft"
+              }`}
+            >
+              EN
+            </button>
+          </div>
 
           <button
             type="button"
             className="inline-flex size-10 items-center justify-center rounded-full border border-line bg-paper text-olive lg:hidden"
             aria-expanded={open}
-            aria-controls="mobile-nav"
+            aria-controls={menuId}
             onClick={() => setOpen((value) => !value)}
           >
             <span className="sr-only">{open ? t.nav.close : t.nav.open}</span>
-            {open ? (
-              <CloseIcon />
-            ) : (
-              <MenuIcon />
-            )}
+            {open ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
       </div>
 
       {open ? (
         <div
-          id="mobile-nav"
-          className="border-t border-line bg-cream lg:hidden"
+          id={menuId}
+          className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-line bg-cream lg:hidden"
         >
-          <nav className="section-shell flex flex-col gap-1 py-4" aria-label={t.nav.menu}>
+          <nav className="section-shell flex flex-col gap-1 py-5" aria-label={t.nav.menu}>
             {t.nav.items.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-xl px-3 py-3 text-base font-medium text-ink hover:bg-olive-soft/70"
+                className="rounded-2xl px-4 py-3 text-lg font-medium text-ink hover:bg-olive-soft/70"
                 onClick={(event) => {
                   event.preventDefault();
                   go(item.href);
