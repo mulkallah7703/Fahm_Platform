@@ -27,32 +27,28 @@ function isLocale(value: string | null): value is Locale {
 }
 
 function applyDocumentLocale(locale: Locale) {
-  const dir = locale === "ar" ? "rtl" : "ltr";
   document.documentElement.lang = locale;
-  document.documentElement.dir = dir;
+  document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
   document.title = content[locale].meta.title;
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("ar");
-  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    // Hydrate the stored language after mount so SSR/CSR Arabic markup matches.
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage is client-only
-    if (isLocale(stored)) setLocaleState(stored);
-    setReady(true);
+    if (isLocale(stored) && stored !== "ar") {
+      // Restore a saved language after mount so SSR Arabic markup hydrates cleanly.
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage is client-only
+      setLocaleState(stored);
+      applyDocumentLocale(stored);
+    }
   }, []);
-
-  useEffect(() => {
-    if (!ready) return;
-    applyDocumentLocale(locale);
-    window.localStorage.setItem(STORAGE_KEY, locale);
-  }, [locale, ready]);
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
+    window.localStorage.setItem(STORAGE_KEY, next);
+    applyDocumentLocale(next);
   }, []);
 
   const value = useMemo<LanguageContextValue>(

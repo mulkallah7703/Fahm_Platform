@@ -34,6 +34,7 @@ export function SiteHeader() {
   }
 
   return (
+    <>
     <header className="sticky top-0 z-50 border-b border-line/80 bg-cream/90 backdrop-blur-md">
       <div className="section-shell flex h-16 items-center justify-between gap-3 sm:h-[4.5rem]">
         <a href="#top" className="rounded-xl" onClick={() => setOpen(false)}>
@@ -66,6 +67,7 @@ export function SiteHeader() {
             aria-label={t.lang.switchAria}
           >
             <button
+              id="lang-ar"
               type="button"
               onClick={() => setLocale("ar")}
               aria-pressed={locale === "ar"}
@@ -78,6 +80,7 @@ export function SiteHeader() {
               عربي
             </button>
             <button
+              id="lang-en"
               type="button"
               onClick={() => setLocale("en")}
               aria-pressed={locale === "en"}
@@ -92,6 +95,7 @@ export function SiteHeader() {
           </div>
 
           <button
+            id="mobile-menu-toggle"
             type="button"
             className="inline-flex size-10 items-center justify-center rounded-full border border-line bg-paper text-olive lg:hidden"
             aria-expanded={open}
@@ -104,29 +108,30 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {open ? (
-        <div
-          id={menuId}
-          className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-line bg-cream lg:hidden"
-        >
-          <nav className="section-shell flex flex-col gap-1 py-5" aria-label={t.nav.menu}>
-            {t.nav.items.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="rounded-2xl px-4 py-3 text-lg font-medium text-ink hover:bg-olive-soft/70"
-                onClick={(event) => {
-                  event.preventDefault();
-                  go(item.href);
-                }}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      ) : null}
     </header>
+    {open ? (
+      <div
+        id={menuId}
+        className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-line bg-cream sm:top-[4.5rem] lg:hidden"
+      >
+        <nav className="section-shell flex flex-col gap-1 py-5" aria-label={t.nav.menu}>
+          {t.nav.items.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="rounded-2xl px-4 py-3 text-lg font-medium text-ink hover:bg-olive-soft/70"
+              onClick={(event) => {
+                event.preventDefault();
+                go(item.href);
+              }}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    ) : null}
+    </>
   );
 }
 

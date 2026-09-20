@@ -188,11 +188,13 @@ export function FeaturesSection() {
     <Section id="features" tone="paper">
       <Kicker>{t.features.kicker}</Kicker>
       <SectionTitle>{t.features.title}</SectionTitle>
-      <ul className="mt-10 grid gap-4 md:grid-cols-2">
-        {t.features.items.map((feature) => (
+      <ul className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {t.features.items.map((feature, index) => (
           <li
             key={feature.num}
-            className="rounded-3xl border border-line bg-cream p-6"
+            className={`rounded-3xl border border-line bg-cream p-6 ${
+              index === t.features.items.length - 1 ? "lg:col-span-3" : ""
+            }`}
           >
             <p className="font-display text-2xl text-gold">{feature.num}</p>
             <h3 className="mt-2 text-xl font-bold text-ink">{feature.title}</h3>

@@ -25,7 +25,7 @@ import {
 import { useLanguage } from "@/components/language-provider";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function Home() {
         {t.skip}
       </a>
       <SiteHeader />
-      <main id="main">
+      <main id="main" data-locale={locale}>
         <HeroSection />
         <AboutSection />
         <ProblemSection />
