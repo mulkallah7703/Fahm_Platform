@@ -41,7 +41,7 @@ export default function OpenGraphImage() {
               fontWeight: 700,
             }}
           >
-            F
+            ف
           </div>
           <div style={{ fontSize: 28, letterSpacing: 8, color: "#C6BEFF" }}>
             FAHM
