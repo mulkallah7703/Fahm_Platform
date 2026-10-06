@@ -18,8 +18,8 @@ export function HeroSection() {
             <span className="size-1.5 rounded-full bg-terra" aria-hidden="true" />
             {t.hero.eyebrow}
           </p>
-          <h1 className="font-display text-6xl font-bold leading-none text-ink sm:text-7xl lg:text-8xl">
-            {t.hero.brandAr}
+          <h1 className="font-sans text-6xl font-bold leading-[1.2] text-ink sm:text-7xl lg:text-8xl">
+            {t.hero.brandArDisplay}
             <span className="mt-3 block font-sans text-xl font-semibold tracking-[0.28em] text-olive sm:text-2xl">
               {t.hero.brandEn}
             </span>

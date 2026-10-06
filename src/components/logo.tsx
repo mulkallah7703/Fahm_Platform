@@ -7,9 +7,21 @@ export function LogoMark({ className = "size-10" }: { className?: string }) {
       aria-hidden="true"
     >
       <rect x="2" y="2" width="44" height="44" rx="14" fill="#8B7CF6" />
+      {/* Isolated Arabic ف: loop, left tail, and the distinguishing dot */}
+      <circle cx="29" cy="14.2" r="2.35" fill="#0C0D14" />
       <path
-        d="M15 33V15h11.4c4.4 0 7.1 2.4 7.1 6.1 0 2.6-1.5 4.6-4 5.5L34 33h-4.2l-4.1-6.1H19.2V33H15Zm4.2-9.7h6.6c2.2 0 3.5-1.1 3.5-2.9s-1.3-2.8-3.5-2.8h-6.6v5.7Z"
-        fill="#0C0D14"
+        d="M29 19.6c4.7 0 8.2 3.4 8.2 8.1 0 4.8-3.5 8.3-8.2 8.3-2.1 0-3.9-.6-5.3-1.8"
+        fill="none"
+        stroke="#0C0D14"
+        strokeWidth="3.15"
+        strokeLinecap="round"
+      />
+      <path
+        d="M23.8 32.6c-3.4 1.4-7.2 2.6-8.3 6.2"
+        fill="none"
+        stroke="#0C0D14"
+        strokeWidth="3.15"
+        strokeLinecap="round"
       />
     </svg>
   );
@@ -28,7 +40,7 @@ export function BrandLockup({
     <span className="inline-flex items-center gap-2.5">
       <LogoMark className={compact ? "size-9" : "size-11"} />
       <span className="leading-tight">
-        <span className="font-display block text-xl font-bold text-ink sm:text-2xl">
+        <span className="block font-sans text-xl font-bold text-ink sm:text-2xl">
           {wordmark}
         </span>
         <span className="block text-[0.7rem] font-semibold tracking-[0.18em] text-olive">

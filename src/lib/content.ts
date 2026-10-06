@@ -31,6 +31,7 @@ export const content = {
     },
     hero: {
       brandAr: "فَهْم",
+      brandArDisplay: "فهم",
       brandEn: "FAHM",
       eyebrow: "نظارة ذكية + منصة على الجوال",
       subtitle: "منصة الذكاء الاصطناعي للتعلّم التكيفي لذوي الإعاقة",
@@ -337,7 +338,6 @@ export const content = {
     footer: {
       brand: "فَهْم | FAHM",
       blurb: "نظارة ذكية ومنصة للتعلّم التكيفي لذوي الإعاقة",
-      copyright: "موقع تعريفي لفَهْم — للمدارس والمستثمرين والشركاء.",
     },
   },
   en: {
@@ -369,6 +369,7 @@ export const content = {
     },
     hero: {
       brandAr: "فَهْم",
+      brandArDisplay: "فهم",
       brandEn: "FAHM",
       eyebrow: "Smart glasses + a mobile platform",
       subtitle: "The AI platform for adaptive learning for people with disabilities",
@@ -681,7 +682,6 @@ export const content = {
     footer: {
       brand: "فَهْم | FAHM",
       blurb: "Smart glasses and an adaptive learning platform for people with disabilities",
-      copyright: "A portfolio site for FAHM — for schools, investors, and partners.",
     },
   },
 } as const;
