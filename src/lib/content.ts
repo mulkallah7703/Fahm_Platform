@@ -5,9 +5,9 @@ export const locales: Locale[] = ["ar", "en"];
 export const content = {
   ar: {
     meta: {
-      title: "فَهْم | FAHM — منصة الذكاء الاصطناعي للتعلّم التكيفي لذوي الإعاقة",
+      title: "فَهْم | FAHM — نظارة ذكية ومنصة للتعلّم التكيفي لذوي الإعاقة",
       description:
-        "فَهْم منصة تعليمية ذكية تستخدم الذكاء الاصطناعي لإعادة تكييف المحتوى التعليمي بما يتناسب مع احتياجات الطلاب ذوي الإعاقة.",
+        "نمكّن الطلاب من ذوي الإعاقة من تحويل الكتب المدرسية إلى تجارب تعلم مخصصة عبر نظارة ذكية مدعومة بالذكاء الاصطناعي ومنصة على الجوال.",
     },
     skip: "تخطَّ إلى المحتوى",
     nav: {
@@ -16,10 +16,10 @@ export const content = {
       menu: "القائمة",
       items: [
         { href: "#about", label: "النبذة" },
-        { href: "#problem", label: "المشكلة" },
         { href: "#solution", label: "الحل" },
+        { href: "#glasses", label: "نظارة فَهْم" },
+        { href: "#platform", label: "المنصة" },
         { href: "#features", label: "المزايا" },
-        { href: "#how-it-works", label: "كيف يعمل" },
         { href: "#impact", label: "الأثر" },
         { href: "#vision", label: "الرؤية" },
       ],
@@ -32,11 +32,13 @@ export const content = {
     hero: {
       brandAr: "فَهْم",
       brandEn: "FAHM",
-      eyebrow: "منصة تعليمية ذكية",
+      eyebrow: "نظارة ذكية + منصة على الجوال",
       subtitle: "منصة الذكاء الاصطناعي للتعلّم التكيفي لذوي الإعاقة",
+      pitch:
+        "نمكّن الطلاب من ذوي الإعاقة من تحويل الكتب المدرسية إلى تجارب تعلم مخصصة عبر نظارة ذكية مدعومة بالذكاء الاصطناعي ومنصة على الجوال، ليرى كل متعلم ويفهم ويتعلم باستقلالية.",
       slogan: "كل طفل يستحق أن يفهم ويتعلم وينجح، مهما اختلفت طريقته في التعلم.",
       primaryCta: "تعرّف على فَهْم",
-      secondaryCta: "للمدارس والشركاء",
+      secondaryCta: "نظارة فَهْم",
     },
     about: {
       kicker: "نبذة عن المشروع",
@@ -71,6 +73,66 @@ export const content = {
         { title: "تجربة تعلم ميسرة", hint: "قراءة أو استماع أو تفاعل" },
       ],
       note: "دون الحاجة إلى إعادة تصميم الكتاب أو تغيير المنهج الدراسي.",
+    },
+    glasses: {
+      kicker: "نظارة فَهْم | FAHM Glasses",
+      title: "طريقان لالتقاط الصفحة: النظارة والجوال",
+      lead: "أصبح لفَهْم طريقان لالتقاط صفحة الكتاب: نظارة ذكية للاستخدام دون يدين، صُممت خصيصًا للطلاب المكفوفين وذوي الإعاقة البصرية، وتطبيق الجوال أو كاميرا الهاتف.",
+      heroAlt:
+        "نظارة فَهْم الذكية باللون الأزرق الداكن مع تفاصيل ذهبية وكاميرا أمامية وعلامات برايل على الذراع.",
+      featuresTitle: "ماذا توفّر النظارة؟",
+      features: [
+        "كاميرا أمامية تمسح صفحة الكتاب.",
+        "توجيه صوتي يساعد الطالب الكفيف على محاذاة الصفحة داخل الإطار.",
+        "الإشارة بالإصبع: يشير الطالب إلى جزء ويسأل «وش هذا؟ / What is this?».",
+        "شرح صوتي للرسومات والمخططات.",
+        "سماعة مفتوحة الأذن تبقي الطالب متصلًا بما حوله.",
+        "أزرار مادية بعلامات برايل.",
+        "اتصال بلوتوث بتطبيق فَهْم.",
+      ],
+      explodedAlt:
+        "رسم تفصيلي لنظارة فَهْم يوضح الكاميرا ووحدة المعالجة والسماعة المفتوحة والأزرار اللمسية والبطارية.",
+      explodedCaption: "من الداخل: كاميرا، معالجة، صوت مفتوح الأذن، وأزرار لمسية.",
+      flowKicker: "كيف تعمل النظارة؟",
+      flowTitle: "أربع خطوات من الصفحة إلى الشرح",
+      flow: [
+        { num: "01", title: "Scan", hint: "مسح الصفحة" },
+        { num: "02", title: "Send", hint: "إرسال إلى فَهْم" },
+        { num: "03", title: "Understand", hint: "فهم بالذكاء الاصطناعي" },
+        { num: "04", title: "Explain", hint: "شرح صوتي يعود إلى الطالب" },
+      ],
+      scanAlt:
+        "طالب يرتدي نظارة فَهْم ويمسح صفحة كتاب، ثم يحلّل النظام الصورة ويعيد شرحًا صوتيًا.",
+      waysKicker: "طريقتان لاستخدام فَهْم",
+      waysTitle: "النظارة أو الهاتف… والفهم واحد",
+      waysAlt:
+        "طالبان يستخدمان فَهْم: أحدهما بنظارة ذكية لمسح الكتاب، والآخر بهاتف ومنصة فَهْم.",
+      glassesWay: {
+        title: "نظارة فَهْم",
+        body: "استخدام دون يدين للطلاب المكفوفين وذوي الإعاقة البصرية، مع توجيه صوتي وإشارة بالإصبع.",
+      },
+      phoneWay: {
+        title: "التطبيق أو كاميرا الهاتف",
+        body: "تصوير الصفحة أو رفعها من الجوال، ثم متابعة الدرس والمراجعة داخل المنصة.",
+      },
+      phoneAlt: "طالب يستخدم هاتفه مع فَهْم للوصول إلى صفحة الكتاب وشرحها.",
+    },
+    platform: {
+      kicker: "المنصة",
+      title: "منصة فَهْم كما يستخدمها الطالب",
+      lead: "من لوحة التحكم يصوّر الطالب صفحة الكتاب أو يرفعها، ثم يحوّلها فَهْم إلى تجربة تعلم يمكن متابعتها ومراجعتها وسؤال المساعد عنها.",
+      imageAlt:
+        "لقطة من منصة فَهْم تعرض رفع صفحة الكتاب، ونبض التعلّم، وإكمال الدرس، ومراجعة المفاهيم الضعيفة.",
+      capabilities: [
+        "رفع أو تصوير صفحة الكتاب (OCR + Vision AI — PNG / JPG / PDF).",
+        "إدخال نص من درس أو ملزمة.",
+        "إكمال الدرس ومتابعة التقدّم.",
+        "مراجعة المفاهيم الضعيفة.",
+        "نبض التعلّم (Learning Pulse).",
+        "خريطة المعرفة.",
+        "اسأل فَهْم.",
+        "السجل والتاريخ.",
+      ],
     },
     audiences: {
       kicker: "الفئات المستهدفة",
@@ -274,16 +336,16 @@ export const content = {
     },
     footer: {
       brand: "فَهْم | FAHM",
-      blurb: "منصة الذكاء الاصطناعي للتعلّم التكيفي لذوي الإعاقة",
+      blurb: "نظارة ذكية ومنصة للتعلّم التكيفي لذوي الإعاقة",
       copyright: "موقع تعريفي لفَهْم — للمدارس والمستثمرين والشركاء.",
     },
   },
   en: {
     meta: {
       title:
-        "FAHM | فَهْم — AI platform for adaptive learning for people with disabilities",
+        "FAHM | فَهْم — Smart glasses and an adaptive learning platform for people with disabilities",
       description:
-        "FAHM is a smart educational platform that uses artificial intelligence to adapt educational content to the needs of students with disabilities.",
+        "We empower students with disabilities to transform textbooks into personalized learning experiences through AI-powered smart glasses and a mobile platform.",
     },
     skip: "Skip to content",
     nav: {
@@ -292,10 +354,10 @@ export const content = {
       menu: "Menu",
       items: [
         { href: "#about", label: "About" },
-        { href: "#problem", label: "Problem" },
         { href: "#solution", label: "Solution" },
+        { href: "#glasses", label: "FAHM Glasses" },
+        { href: "#platform", label: "The Platform" },
         { href: "#features", label: "Features" },
-        { href: "#how-it-works", label: "How it works" },
         { href: "#impact", label: "Impact" },
         { href: "#vision", label: "Vision" },
       ],
@@ -308,12 +370,14 @@ export const content = {
     hero: {
       brandAr: "فَهْم",
       brandEn: "FAHM",
-      eyebrow: "A smart educational platform",
+      eyebrow: "Smart glasses + a mobile platform",
       subtitle: "The AI platform for adaptive learning for people with disabilities",
+      pitch:
+        "We empower students with disabilities to transform textbooks into personalized learning experiences through AI-powered smart glasses and a mobile platform, enabling every learner to see, understand, and learn independently.",
       slogan:
         "Every child deserves to understand, learn, and succeed, no matter how they learn.",
       primaryCta: "Discover FAHM",
-      secondaryCta: "For schools and partners",
+      secondaryCta: "FAHM Glasses",
     },
     about: {
       kicker: "About the project",
@@ -349,6 +413,66 @@ export const content = {
         { title: "An accessible experience", hint: "Read, listen, or interact" },
       ],
       note: "Without needing to redesign the book or change the curriculum.",
+    },
+    glasses: {
+      kicker: "FAHM Glasses | نظارة فَهْم",
+      title: "Two ways to capture the page: glasses and phone",
+      lead: "FAHM now has two ways to capture a textbook page: AI smart glasses for hands-free use, built especially for blind and visually impaired students, and the mobile app or phone camera.",
+      heroAlt:
+        "FAHM smart glasses in deep teal with gold details, a front camera, and braille markings on the temple.",
+      featuresTitle: "What the glasses offer",
+      features: [
+        "A front camera that scans the textbook page.",
+        "Voice guidance that helps a blind student frame the page.",
+        "Finger-pointing: the student points at a part and asks “وش هذا؟ / What is this?”.",
+        "Spoken explanations of diagrams.",
+        "An open-ear speaker that keeps the student connected to the room.",
+        "Physical buttons with braille markings.",
+        "Bluetooth to the FAHM app.",
+      ],
+      explodedAlt:
+        "Exploded diagram of FAHM Glasses showing the camera, processor, open-ear speaker, tactile buttons, and battery.",
+      explodedCaption: "Inside: camera, processing, open-ear audio, and tactile controls.",
+      flowKicker: "How the glasses work",
+      flowTitle: "Four steps from the page to the explanation",
+      flow: [
+        { num: "01", title: "Scan", hint: "Scan the page" },
+        { num: "02", title: "Send", hint: "Send to FAHM" },
+        { num: "03", title: "Understand", hint: "Understand with AI" },
+        { num: "04", title: "Explain", hint: "Audio explanation back to the student" },
+      ],
+      scanAlt:
+        "A student wearing FAHM Glasses scans a book page while the system analyzes the image and returns a spoken explanation.",
+      waysKicker: "Two ways to use FAHM",
+      waysTitle: "Glasses or phone… the same understanding",
+      waysAlt:
+        "Two students using FAHM: one with smart glasses scanning a book, and one with a phone and the FAHM platform.",
+      glassesWay: {
+        title: "FAHM Glasses",
+        body: "Hands-free use for blind and visually impaired students, with voice guidance and finger-pointing.",
+      },
+      phoneWay: {
+        title: "The app or phone camera",
+        body: "Photograph or upload the page from a phone, then continue the lesson and review inside the platform.",
+      },
+      phoneAlt: "A student using a phone with FAHM to reach a textbook page and hear it explained.",
+    },
+    platform: {
+      kicker: "The Platform",
+      title: "The FAHM platform as the student uses it",
+      lead: "From the dashboard the student photographs a textbook page or uploads it, then FAHM turns it into a learning experience they can continue, review, and ask about.",
+      imageAlt:
+        "A screenshot of the FAHM platform showing textbook-page upload, Learning Pulse, continuing a lesson, and reviewing weak concepts.",
+      capabilities: [
+        "Upload or photograph a textbook page (OCR + Vision AI — PNG / JPG / PDF).",
+        "Paste text from a lesson or worksheet.",
+        "Continue the lesson and follow progress.",
+        "Review weak concepts.",
+        "Learning Pulse.",
+        "Knowledge map.",
+        "Ask FAHM.",
+        "History and records.",
+      ],
     },
     audiences: {
       kicker: "Target audiences",
@@ -556,7 +680,7 @@ export const content = {
     },
     footer: {
       brand: "فَهْم | FAHM",
-      blurb: "The AI platform for adaptive learning for people with disabilities",
+      blurb: "Smart glasses and an adaptive learning platform for people with disabilities",
       copyright: "A portfolio site for FAHM — for schools, investors, and partners.",
     },
   },

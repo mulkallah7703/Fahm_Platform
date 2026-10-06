@@ -13,8 +13,8 @@ export function Section({
 }) {
   const tones = {
     plain: "bg-transparent",
-    paper: "bg-paper/70",
-    olive: "bg-olive text-cream",
+    paper: "bg-cream/80",
+    olive: "bg-olive text-sand",
   };
 
   return (

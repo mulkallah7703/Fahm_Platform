@@ -18,28 +18,31 @@ export function HeroSection() {
             <span className="size-1.5 rounded-full bg-terra" aria-hidden="true" />
             {t.hero.eyebrow}
           </p>
-          <h1 className="font-display text-6xl font-bold leading-none text-olive sm:text-7xl lg:text-8xl">
+          <h1 className="font-display text-6xl font-bold leading-none text-ink sm:text-7xl lg:text-8xl">
             {t.hero.brandAr}
-            <span className="mt-3 block font-sans text-xl font-semibold tracking-[0.28em] text-terra sm:text-2xl">
+            <span className="mt-3 block font-sans text-xl font-semibold tracking-[0.28em] text-olive sm:text-2xl">
               {t.hero.brandEn}
             </span>
           </h1>
           <p className="mt-6 max-w-xl text-xl font-medium text-ink-soft sm:text-2xl">
             {t.hero.subtitle}
           </p>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink sm:text-xl">
+            {t.hero.pitch}
+          </p>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
             {t.hero.slogan}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#about"
-              className="inline-flex items-center justify-center rounded-full bg-olive px-6 py-3 text-base font-semibold text-cream transition-colors hover:bg-olive-mid"
+              className="inline-flex items-center justify-center rounded-full bg-olive px-6 py-3 text-base font-semibold text-sand transition-colors hover:bg-olive-mid"
             >
               {t.hero.primaryCta}
             </a>
             <a
-              href="#business"
-              className="inline-flex items-center justify-center rounded-full border border-olive/20 bg-paper px-6 py-3 text-base font-semibold text-olive transition-colors hover:bg-olive-soft"
+              href="#glasses"
+              className="inline-flex items-center justify-center rounded-full border border-olive/30 bg-paper px-6 py-3 text-base font-semibold text-olive transition-colors hover:bg-olive-soft"
             >
               {t.hero.secondaryCta}
             </a>
@@ -69,7 +72,7 @@ function HeroVisual() {
             key={step.title}
             className="flex items-start gap-3 rounded-2xl border border-line/80 bg-cream px-4 py-3"
           >
-            <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-olive text-sm font-bold text-cream">
+            <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-olive text-sm font-bold text-sand">
               {index + 1}
             </span>
             <span>
@@ -123,7 +126,7 @@ export function ProblemSection() {
           </li>
         ))}
       </ul>
-      <p className="mt-8 max-w-3xl rounded-3xl bg-olive px-6 py-5 text-lg font-medium text-cream">
+      <p className="mt-8 max-w-3xl rounded-3xl bg-olive px-6 py-5 text-lg font-medium text-sand">
         {t.problem.closer}
       </p>
     </Section>
@@ -219,7 +222,7 @@ export function HowItWorksSection() {
             key={step}
             className="grid gap-4 rounded-3xl border border-line bg-paper p-5 sm:grid-cols-[auto_1fr] sm:items-center"
           >
-            <span className="flex size-12 items-center justify-center rounded-2xl bg-olive font-display text-2xl text-cream">
+            <span className="flex size-12 items-center justify-center rounded-2xl bg-olive font-display text-2xl text-sand">
               {index + 1}
             </span>
             <p className="text-lg text-ink-soft">{step}</p>
@@ -247,11 +250,11 @@ export function TechSection() {
           </li>
         ))}
       </ul>
-      <div className="mt-8 rounded-3xl bg-olive px-6 py-5 text-cream">
-        <p className="text-sm font-semibold tracking-[0.14em] text-gold">
+      <div className="mt-8 rounded-3xl border border-olive/25 bg-paper px-6 py-5">
+        <p className="text-sm font-semibold tracking-[0.14em] text-terra">
           {t.tech.stackLabel}
         </p>
-        <p className="mt-2 text-lg">{t.tech.stack}</p>
+        <p className="mt-2 text-lg text-ink">{t.tech.stack}</p>
       </div>
     </Section>
   );
@@ -279,15 +282,15 @@ export function DifferenceSection() {
             {t.difference.traditionalPath.join(" → ")}
           </p>
         </article>
-        <article className="rounded-3xl border border-olive/20 bg-olive p-6 text-cream">
-          <p className="text-sm font-semibold tracking-[0.12em] text-gold">
+        <article className="rounded-3xl border border-olive/40 bg-olive-soft p-6">
+          <p className="text-sm font-semibold tracking-[0.12em] text-terra">
             {t.difference.fahmLabel}
           </p>
-          <p className="mt-4 text-lg text-olive-soft">{t.difference.fahmLead}</p>
-          <p className="mt-6 text-sm font-semibold text-gold">
+          <p className="mt-4 text-lg text-ink-soft">{t.difference.fahmLead}</p>
+          <p className="mt-6 text-sm font-semibold text-terra">
             {t.difference.offers}
           </p>
-          <p className="mt-2 font-display text-3xl text-cream">
+          <p className="mt-2 font-display text-3xl text-ink">
             {t.difference.fahmPath.join(" → ")}
           </p>
         </article>
@@ -311,7 +314,7 @@ export function InnovationSection() {
         {t.innovation.parts.map((part) => (
           <li
             key={part}
-            className="rounded-full bg-olive px-4 py-2 font-semibold text-cream"
+            className="rounded-full bg-olive px-4 py-2 font-semibold text-sand"
           >
             {part}
           </li>
@@ -381,7 +384,7 @@ export function BusinessSection() {
     <Section id="business">
       <Kicker>{t.business.kicker}</Kicker>
       <SectionTitle>{t.business.title}</SectionTitle>
-      <p className="mt-6 inline-flex rounded-full bg-olive px-5 py-2 text-lg font-semibold text-cream">
+      <p className="mt-6 inline-flex rounded-full bg-olive px-5 py-2 text-lg font-semibold text-sand">
         {t.business.primary}
       </p>
       <p className="mt-8 font-semibold text-ink">{t.business.expand}</p>
@@ -412,7 +415,7 @@ export function RoadmapSection() {
             key={stage}
             className="grid gap-4 rounded-3xl border border-line bg-cream p-5 sm:grid-cols-[auto_1fr] sm:items-center"
           >
-            <span className="flex size-12 items-center justify-center rounded-full border border-gold/40 bg-olive text-lg font-bold text-cream">
+            <span className="flex size-12 items-center justify-center rounded-full border border-olive/40 bg-olive text-lg font-bold text-sand">
               {index + 1}
             </span>
             <p className="text-lg text-ink-soft">{stage}</p>
@@ -469,16 +472,16 @@ export function VisionSection() {
   const { t } = useLanguage();
 
   return (
-    <Section id="vision" tone="olive">
-      <p className="mb-3 text-sm font-semibold tracking-[0.14em] text-gold">
+    <Section id="vision" tone="paper">
+      <p className="mb-3 text-sm font-semibold tracking-[0.14em] text-terra">
         {t.vision.kicker}
       </p>
-      <h2 className="max-w-3xl font-display text-3xl leading-[1.4] text-cream sm:text-5xl">
+      <h2 className="max-w-3xl font-display text-3xl leading-[1.4] text-ink sm:text-5xl">
         {t.vision.title}
       </h2>
-      <p className="mt-6 max-w-3xl text-lg text-olive-soft">{t.vision.p1}</p>
-      <p className="mt-3 max-w-3xl text-lg text-olive-soft">{t.vision.p2}</p>
-      <p className="mt-8 max-w-3xl text-2xl font-medium text-cream">
+      <p className="mt-6 max-w-3xl text-lg text-ink-soft">{t.vision.p1}</p>
+      <p className="mt-3 max-w-3xl text-lg text-ink-soft">{t.vision.p2}</p>
+      <p className="mt-8 max-w-3xl text-2xl font-medium text-olive">
         {t.vision.line}
       </p>
     </Section>
@@ -503,7 +506,7 @@ export function HumanValueSection() {
       <div className="mt-10 flex flex-col gap-3 sm:flex-row">
         <a
           href="#how-it-works"
-          className="inline-flex items-center justify-center rounded-full bg-olive px-6 py-3 font-semibold text-cream transition-colors hover:bg-olive-mid"
+          className="inline-flex items-center justify-center rounded-full bg-olive px-6 py-3 font-semibold text-sand transition-colors hover:bg-olive-mid"
         >
           {t.human.cta}
         </a>

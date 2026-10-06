@@ -53,7 +53,7 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-olive-soft/70 hover:text-olive"
+              className="rounded-full px-2.5 py-2 text-[0.8rem] font-medium text-ink-soft transition-colors hover:bg-olive-soft hover:text-ink xl:px-3 xl:text-sm"
             >
               {item.label}
             </a>
@@ -73,7 +73,7 @@ export function SiteHeader() {
               aria-pressed={locale === "ar"}
               className={`rounded-full px-2.5 py-1 text-sm font-semibold transition-colors ${
                 locale === "ar"
-                  ? "bg-olive text-cream"
+                  ? "bg-olive text-sand"
                   : "text-olive hover:bg-olive-soft"
               }`}
             >
@@ -86,7 +86,7 @@ export function SiteHeader() {
               aria-pressed={locale === "en"}
               className={`rounded-full px-2.5 py-1 text-sm font-semibold transition-colors ${
                 locale === "en"
-                  ? "bg-olive text-cream"
+                  ? "bg-olive text-sand"
                   : "text-olive hover:bg-olive-soft"
               }`}
             >

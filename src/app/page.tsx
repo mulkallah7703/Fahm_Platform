@@ -22,6 +22,7 @@ import {
   TechSection,
   VisionSection,
 } from "@/components/sections";
+import { GlassesSection, PlatformSection } from "@/components/product-sections";
 import { useLanguage } from "@/components/language-provider";
 
 export default function Home() {
@@ -38,6 +39,8 @@ export default function Home() {
         <AboutSection />
         <ProblemSection />
         <SolutionSection />
+        <GlassesSection />
+        <PlatformSection />
         <AudiencesSection />
         <FeaturesSection />
         <HowItWorksSection />

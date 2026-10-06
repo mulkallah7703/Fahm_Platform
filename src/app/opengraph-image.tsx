@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "فَهْم | FAHM — Adaptive learning for every child";
+export const alt = "فَهْم | FAHM — Smart glasses and adaptive learning";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,8 +15,8 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 80,
-          background: "linear-gradient(135deg, #FBF6EE 0%, #F4ECE0 55%, #D7E3D8 100%)",
-          color: "#1C1712",
+          background: "linear-gradient(160deg, #10111A 0%, #0C0D14 70%, #272640 100%)",
+          color: "#F4F2FB",
         }}
       >
         <div
@@ -32,8 +32,8 @@ export default function OpenGraphImage() {
               width: 64,
               height: 64,
               borderRadius: 18,
-              background: "#24382D",
-              color: "#FBF6EE",
+              background: "#8B7CF6",
+              color: "#0C0D14",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -43,15 +43,15 @@ export default function OpenGraphImage() {
           >
             F
           </div>
-          <div style={{ fontSize: 28, letterSpacing: 8, color: "#A84522" }}>
+          <div style={{ fontSize: 28, letterSpacing: 8, color: "#C6BEFF" }}>
             FAHM
           </div>
         </div>
-        <div style={{ fontSize: 68, fontWeight: 700, color: "#24382D", lineHeight: 1.1 }}>
-          Knowledge adapts to the student
+        <div style={{ fontSize: 58, fontWeight: 700, color: "#F4F2FB", lineHeight: 1.15 }}>
+          See. Understand. Learn.
         </div>
-        <div style={{ marginTop: 24, fontSize: 30, color: "#3D342C", maxWidth: 860 }}>
-          The AI platform for adaptive learning for people with disabilities
+        <div style={{ marginTop: 24, fontSize: 28, color: "#C8C4D8", maxWidth: 900 }}>
+          AI-powered smart glasses and a mobile platform for students with disabilities
         </div>
       </div>
     ),
