@@ -28,8 +28,8 @@ const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
     : "http://localhost:3000";
 
 export const viewport: Viewport = {
-  themeColor: "#fbf6ee",
-  colorScheme: "light",
+  themeColor: "#0c0d14",
+  colorScheme: "dark",
 };
 
 export const metadata: Metadata = {

@@ -1,10 +1,10 @@
 # فَهْم | FAHM
 
-موقع تعريفي (portfolio / landing) لمشروع **فَهْم** — منصة الذكاء الاصطناعي للتعلّم التكيفي لذوي الإعاقة.
+موقع تعريفي (portfolio / landing) لمشروع **فَهْم** — نظارة ذكية ومنصة ذكاء اصطناعي للتعلّم التكيفي لذوي الإعاقة.
 
 هذا المستودع يعرض المشروع للمدارس والمستثمرين والشركاء. لا يتضمن منتج فَهْم نفسه (OCR، الصوت، الحسابات)، بل صفحة تسويقية ثابتة فقط.
 
-A bilingual (Arabic-first, RTL) marketing site for FAHM. Deployable on Vercel.
+A bilingual (Arabic-first, RTL) marketing site for FAHM, themed to match the product’s dark lavender interface. Deployable on Vercel.
 
 ## Stack
 
